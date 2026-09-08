@@ -7,4 +7,5 @@ int main() {
 	rect.ShowSides();
 	rect.ShowAreaAndPerimeter();
 	rect.ShowIfSquare();
+	cout << "brbrbrbrbrbr";
 }
