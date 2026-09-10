@@ -1,5 +1,6 @@
 #include "Rectangle.h"
 #include "iostream"
+#include "string"
 using namespace std;
 Rectangle::Rectangle() : a(5), b(5) {}
 Rectangle::Rectangle(int a, int b) : a(a), b(b) {}
@@ -43,4 +44,32 @@ void Rectangle::ShowIfSquare() {
 		cout << "This is a square\n";
 	else
 		cout << "This is not a square\n";
+}
+Rectangle Rectangle::operator++() {
+	++a;
+	++b;
+	return *this;
+}
+Rectangle Rectangle::operator--() {
+	--a;
+	--b;
+	return *this;
+}
+Rectangle::operator bool() {
+	return a == b;
+}
+Rectangle Rectangle::operator*(int multiplier) {
+	return Rectangle(a * multiplier, b * multiplier);
+}
+Rectangle::operator string() {
+	string rectangle = "";
+	for (int i = 0; i < a; ++i) {
+		for (int j = 0; j < b; ++j) 
+			if (!i || !j || i == a - 1 || j == b - 1)
+				rectangle += "*";
+			else
+				rectangle += " ";
+		rectangle += "\n";
+	}
+	return rectangle;
 }

@@ -1,4 +1,6 @@
 #pragma once
+#include "string"
+using namespace std;
 class Rectangle {
 	int a, b;
 public:
@@ -15,4 +17,9 @@ public:
 	void SetSideB(int b);
 	bool IsSquare();
 	void ShowIfSquare();
-};
+	Rectangle operator++();
+	Rectangle operator--();
+	operator bool();
+	Rectangle operator*(int multiplier);
+	operator string();
+};				
